@@ -78,7 +78,7 @@
     } else if (window.ActiveXObject) { // IE 6 and older
         httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    httpRequest.open('GET', "http://api.conbu.net/v1/associations/" + place + "/both", false);
+    httpRequest.open('GET', "http://dev-api.conbu.net/v1/associations/" + place + "/both", false);
     httpRequest.send();
     if (httpRequest.status === 200) {
       associations = JSON.parse(httpRequest.responseText).associations;
