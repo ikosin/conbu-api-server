@@ -157,7 +157,7 @@
   function getAssociations(strTime, place) {
     var url = "data/associations.json";
     if (timeline === undefined) {
-      var timeline = JSON.parse(ajax(url, 'GET'));
+      timeline = JSON.parse(ajax(url, 'GET'));
     }
     if (timeline[strTime] !== undefined && timeline[strTime][place] !== undefined) {
       return timeline[strTime][place]["associations"];
