@@ -137,10 +137,12 @@
       points: [{x: 920, y: 1890}]
     }];
 
-  function getDataPoints(track) {
+  var timeline, checkpoints, timer;
+
+  function getDataPoints(strTime, track) {
     var dataPoints = [];
     track.forEach(function(ap) {
-      var associations = getAssociations(ap.place) * (1000 / track[0].max);
+      var associations = getAssociations(strTime, ap.place) * (1000 / track[0].max);
       ap.points.forEach(function(point) {
         var clonedDataPoint = (JSON.parse(JSON.stringify(_dataPoint)));
         clonedDataPoint.x = point.x;
@@ -152,47 +154,54 @@
     return dataPoints;
   }
 
-  function getAssociations(place) {
-    var httpRequest;
-    var associations;
+  function getAssociations(strTime, place) {
+    var url = "data/associations.json";
+    if (timeline === undefined) {
+      var timeline = JSON.parse(ajax(url, 'GET'));
+    }
+    if (timeline[strTime] !== undefined && timeline[strTime][place] !== undefined) {
+      return timeline[strTime][place]["associations"];
+    } else {
+      return 0;
+    }
+  }
+
+  function ajax(url, method) {
+    var httpRequest, result;
     if (window.XMLHttpRequest) { // Mozilla, Safari, IE7+ ...
         httpRequest = new XMLHttpRequest();
     } else if (window.ActiveXObject) { // IE 6 and older
         httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    httpRequest.open('GET', "http://api.conbu.net/v1/associations/" + place + "/both", false);
+//    httprequest.open('get', "http://api.conbu.net/v1/associations/" + place + "/both", false);
+//    httpRequest.open('GET', "http://dev-api.conbu.net/v1/associations/" + place + "/both", false);
+    httpRequest.open(method, url, false);
     httpRequest.send();
     if (httpRequest.status === 200) {
-      associations = JSON.parse(httpRequest.responseText).associations;
+      result = httpRequest.responseText;
     } else {
       console.log("api error");
     }
-    return associations;
+    return result
   }
 
-  function updateTime() {
-    var date = new Date();
-    var clock = date.getFullYear() + "-"
-        + ("0" + (date.getMonth() + 1)).slice(-2) + "-"
-        + ("0" + date.getDate()).slice(-2) + " "
-        + ("0" + date.getHours()).slice(-2) + ":"
-        + ("0" + date.getMinutes()).slice(-2) + ":"
-        + ("0" + date.getSeconds()).slice(-2);
-    document.getElementById("time").innerHTML = clock;
+  function updateTime(strTime) {
+    document.getElementById("time").innerHTML = strTime;
   }
 
-  function start() {
+  function draw() {
+    strTime = checkpoints.shift();
 
     var dataPoints = [];
-    dataPoints = dataPoints.concat(getDataPoints(track_a));
-    dataPoints = dataPoints.concat(getDataPoints(track_b));
-    dataPoints = dataPoints.concat(getDataPoints(track_c));
-    dataPoints = dataPoints.concat(getDataPoints(track_d));
-    dataPoints = dataPoints.concat(getDataPoints(track_e));
-    dataPoints = dataPoints.concat(getDataPoints(reception_6f));
-    dataPoints = dataPoints.concat(getDataPoints(reception_7f));
-    dataPoints = dataPoints.concat(getDataPoints(lobby_1));
-    dataPoints = dataPoints.concat(getDataPoints(lobby_2));
+    dataPoints = dataPoints.concat(getDataPoints(strTime, track_a));
+    dataPoints = dataPoints.concat(getDataPoints(strTime, track_b));
+    dataPoints = dataPoints.concat(getDataPoints(strTime, track_c));
+    dataPoints = dataPoints.concat(getDataPoints(strTime, track_d));
+    dataPoints = dataPoints.concat(getDataPoints(strTime, track_e));
+    dataPoints = dataPoints.concat(getDataPoints(strTime, reception_6f));
+    dataPoints = dataPoints.concat(getDataPoints(strTime, reception_7f));
+    dataPoints = dataPoints.concat(getDataPoints(strTime, lobby_1));
+    dataPoints = dataPoints.concat(getDataPoints(strTime, lobby_2));
     var data = {
       max: 1000,
       min: 0,
@@ -200,12 +209,17 @@
     };
     heatmapInstance.setData(data);
 
-    updateTime();
+    updateTime(strTime);
 
-    setTimeout(start, 10000);
+    if (checkpoints.length == 0) {
+      clearTimeout(timer)
+    } else {
+      timer = setTimeout(draw, 500);
+    }
   }
 
   window.onload = function() {
-    start();
+    checkpoints = JSON.parse(ajax("data/checkpoints.json", 'GET'));
+    draw();
   };
 })();
