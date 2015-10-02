@@ -4,7 +4,7 @@
   };
   var heatmapInstance = h337.create(config);
   var _dataPoint = {
-    radius: 150,
+    radius: 130,
 //    opacity: 1,
     maxOpacity: .9,
     minOpacity: .3,
@@ -16,133 +16,125 @@
     }
   };
 
-  var track_a = [{
-      place: "AP-017",
-      points: [{x: 700, y: 1320}],
-      max: 1000 * 1.0 / 12
-    },{
-      place: "AP-018",
-      points: [{x: 850, y: 1320}]
-    },{
-      place: "AP-105",
-      points: [{x: 570, y: 1440}]
-    },{
-      place: "AP-107",
-      points: [{x: 750, y: 1440}]
-    },{
-      place: "AP-111",
-      points: [{x: 950, y: 1430}]
-    },{
-      place: "AP-108",
-      points: [{x: 700, y: 1520}]
-    },{
-      place: "AP-110",
-      points: [{x: 880, y: 1520}]
-    },{
-      place: "AP-106",
-      points: [{x: 570, y: 1600}]
-    },{
-      place: "AP-109",
-      points: [{x: 750, y: 1600}]
-    },{
-      place: "AP-112",
-      points: [{x: 950, y: 1600}]
-    },{
-      place: "AP-019",
-      points: [{x: 700, y: 1700}]
-    },{
-      place: "AP-020",
-      points: [{x: 850, y: 1700}]
-    }];
-  var track_b = [{
-      place: "AP-010",
-      points: [{x: 1090, y: 1130}],
-      max: 100 * 1.0 / 3
-    },{
-      place: "AP-103",
-      points: [{x: 1150, y: 1090}]
-    },{
-      place: "AP-009",
-      points: [{x: 1210, y: 1130}]
-    }];
-  var track_c = [{
-      place: "AP-014",
-      points: [{x: 1150, y: 2000}],
-      max: 122 * 1.0 / 3
-    },{
-      place: "AP-104",
-      points: [{x: 1250, y: 1960}]
-    },{
-      place: "AP-021",
-      points: [{x: 1080, y: 1930}]
-    }];
-  var track_d = [{
-      place: "AP-001",
-      points: [{x: 630, y: 350}],
-      max: 288 * 1.0 / 4
-    },{
+  var track_1 = [{
       place: "AP-101",
-      points: [{x: 800, y: 440}],
-    },{
-      place: "AP-002",
-      points: [{x: 900, y: 350}]
-    },{
-      place: "AP-023",
-      points: [{x: 630, y: 440}]
-    }];
-  var track_e = [{
-      place: "AP-003",
-      points: [{x: 630, y: 620}],
-      max: 288 * 1.0 / 4
+      points: [{x: 940, y: 450}],
+      max: 500 * 1.0 / 6
     },{
       place: "AP-102",
-      points: [{x: 790, y: 620}]
+      points: [{x: 880, y: 300}]
     },{
-      place: "AP-004",
-      points: [{x: 900, y: 520}]
+      place: "AP-103",
+      points: [{x: 930, y: 130}]
     },{
-      place: "AP-022",
-      points: [{x: 760, y: 520}]
+      place: "AP-104",
+      points: [{x: 770, y: 290}]
+    },{
+      place: "AP-105",
+      points: [{x: 770, y: 120}]
+    },{
+      place: "AP-106",
+      points: [{x: 770, y: 450}]
     }];
-  var reception_6f = [{
-      place: "AP-005",
-      points: [{x: 990, y: 390}],
-      max: 80 / 2
+  var track_2 = [{
+      place: "AP-009",
+      points: [{x: 980, y: 950}],
+      max: 300 * 1.0 / 6
     },{
-      place: "AP-006",
-      points: [{x: 990, y: 550}]
-    }];
-  var reception_7f = [{
-      place: "AP-007",
-      points: [{x: 1220, y: 1430}],
-      max: 80 / 2
-    },{
-      place: "AP-008",
-      points: [{x: 1220, y: 1620}]
-    }];
-  var lobby_1 = [{
-      place: "AP-012",
-      points: [{x: 610, y: 1170}],
-      max: 80 / 2
+      place: "AP-010",
+      points: [{x: 880, y: 770}]
     },{
       place: "AP-011",
-      points: [{x: 920, y: 1170}]
+      points: [{x: 580, y: 1000}]
+    },{
+      place: "AP-012",
+      points: [{x: 510, y: 910}]
+    },{
+      place: "AP-013",
+      points: [{x: 450, y: 790}]
+    },{
+      place: "AP-109",
+      points: [{x: 770, y: 1000}]
+    },{
+      place: "AP-110",
+      points: [{x: 660, y: 770}]
     }];
-  var lobby_2 = [{
-      place: "AP-016",
-      points: [{x: 610, y: 1890}],
-      max: 80 / 2
+  var track_3 = [{
+      place: "AP-020",
+      points: [{x: 230, y: 1580}],
+      max: 200 * 1.0 / 3
+    },{
+      place: "AP-022",
+      points: [{x: 250, y: 1400}]
+    },{
+      place: "AP-111",
+      points: [{x: 360, y: 1580}]
+    }];
+  var track_4 = [{
+      place: "AP-021",
+      points: [{x: 570, y: 1580}],
+      max: 200 * 1.0 / 3
+    },{
+      place: "AP-023",
+      points: [{x: 570, y: 1400}],
+    },{
+      place: "AP-112",
+      points: [{x: 430, y: 1400}]
+    }];
+  var foodcoat = [{
+      place: "AP-004",
+      points: [{x: 120, y: 450}],
+      max: 50 / 3
+    },{
+      place: "AP-006",
+      points: [{x: 120, y: 120}]
+    },{
+      place: "AP-108",
+      points: [{x: 120, y: 280}]
+    }];
+  var sponsor = [{
+      place: "AP-001",
+      points: [{x: 530, y: 110}],
+      max: 50 / 4
+    },{
+      place: "AP-003",
+      points: [{x: 280, y: 450}]
+    },{
+      place: "AP-005",
+      points: [{x: 320, y: 110}]
+    },{
+      place: "AP-107",
+      points: [{x: 550, y: 300}]
+    }];
+  var reception = [{
+      place: "AP-002",
+      points: [{x: 460, y: 400}],
+      max: 80 / 1
+    }];
+  var lobby_2f = [{
+      place: "AP-014",
+      points: [{x: 350, y: 910}],
+      max: 30 / 2
     },{
       place: "AP-015",
-      points: [{x: 920, y: 1890}]
+      points: [{x: 190, y: 900}]
+    }];
+  var lobby_4f = [{
+      place: "AP-024",
+      points: [{x: 270, y: 1260}],
+      max: 40 / 3
+    },{
+      place: "AP-025",
+      points: [{x: 370, y: 1190}]
+    },{
+      place: "AP-026",
+      points: [{x: 430, y: 1270}]
     }];
 
-  var timeline, checkpoints, timer;
-
-  function getDataPoints(strTime, track) {
+  function getDataPoints(track) {
     var dataPoints = [];
     track.forEach(function(ap) {
-      var associations = getAssociations(strTime, ap.place) * (1000 / track[0].max);
+      var associations = getAssociations(ap.place) * (1000 / track[0].max);
       ap.points.forEach(function(point) {
         var clonedDataPoint = (JSON.parse(JSON.stringify(_dataPoint)));
         clonedDataPoint.x = point.x;
@@ -154,54 +146,47 @@
     return dataPoints;
   }
 
-  function getAssociations(strTime, place) {
-    var url = "data/associations.json";
-    if (timeline === undefined) {
-      timeline = JSON.parse(ajax(url, 'GET'));
-    }
-    if (timeline[strTime] !== undefined && timeline[strTime][place] !== undefined) {
-      return timeline[strTime][place]["associations"];
-    } else {
-      return 0;
-    }
-  }
-
-  function ajax(url, method) {
-    var httpRequest, result;
+  function getAssociations(place) {
+    var httpRequest;
+    var associations;
     if (window.XMLHttpRequest) { // Mozilla, Safari, IE7+ ...
         httpRequest = new XMLHttpRequest();
     } else if (window.ActiveXObject) { // IE 6 and older
         httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
     }
-//    httprequest.open('get', "http://api.conbu.net/v1/associations/" + place + "/both", false);
-//    httpRequest.open('GET', "http://dev-api.conbu.net/v1/associations/" + place + "/both", false);
-    httpRequest.open(method, url, false);
+    httpRequest.open('GET', "http://api.conbu.net/v1/associations/" + place + "/both", false);
     httpRequest.send();
     if (httpRequest.status === 200) {
-      result = httpRequest.responseText;
+      associations = JSON.parse(httpRequest.responseText).associations;
     } else {
       console.log("api error");
     }
-    return result
+    return associations;
   }
 
-  function updateTime(strTime) {
-    document.getElementById("time").innerHTML = strTime;
+  function updateTime() {
+    var date = new Date();
+    var clock = date.getFullYear() + "-"
+        + ("0" + (date.getMonth() + 1)).slice(-2) + "-"
+        + ("0" + date.getDate()).slice(-2) + " "
+        + ("0" + date.getHours()).slice(-2) + ":"
+        + ("0" + date.getMinutes()).slice(-2) + ":"
+        + ("0" + date.getSeconds()).slice(-2);
+    document.getElementById("time").innerHTML = clock;
   }
 
-  function draw() {
-    strTime = checkpoints.shift();
+  function start() {
 
     var dataPoints = [];
-    dataPoints = dataPoints.concat(getDataPoints(strTime, track_a));
-    dataPoints = dataPoints.concat(getDataPoints(strTime, track_b));
-    dataPoints = dataPoints.concat(getDataPoints(strTime, track_c));
-    dataPoints = dataPoints.concat(getDataPoints(strTime, track_d));
-    dataPoints = dataPoints.concat(getDataPoints(strTime, track_e));
-    dataPoints = dataPoints.concat(getDataPoints(strTime, reception_6f));
-    dataPoints = dataPoints.concat(getDataPoints(strTime, reception_7f));
-    dataPoints = dataPoints.concat(getDataPoints(strTime, lobby_1));
-    dataPoints = dataPoints.concat(getDataPoints(strTime, lobby_2));
+    dataPoints = dataPoints.concat(getDataPoints(track_1));
+    dataPoints = dataPoints.concat(getDataPoints(track_2));
+    dataPoints = dataPoints.concat(getDataPoints(track_3));
+    dataPoints = dataPoints.concat(getDataPoints(track_4));
+    dataPoints = dataPoints.concat(getDataPoints(foodcoat));
+    dataPoints = dataPoints.concat(getDataPoints(sponsor));
+    dataPoints = dataPoints.concat(getDataPoints(reception));
+    dataPoints = dataPoints.concat(getDataPoints(lobby_2f));
+    dataPoints = dataPoints.concat(getDataPoints(lobby_4f));
     var data = {
       max: 1000,
       min: 0,
@@ -209,17 +194,12 @@
     };
     heatmapInstance.setData(data);
 
-    updateTime(strTime);
+    updateTime();
 
-    if (checkpoints.length == 0) {
-      clearTimeout(timer)
-    } else {
-      timer = setTimeout(draw, 500);
-    }
+    setTimeout(start, 10000);
   }
 
   window.onload = function() {
-    checkpoints = JSON.parse(ajax("data/checkpoints.json", 'GET'));
-    draw();
+    start();
   };
 })();
