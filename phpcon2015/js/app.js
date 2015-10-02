@@ -61,25 +61,25 @@
     }];
   var track_3 = [{
       place: "AP-020",
-      points: [{x: 230, y: 1580}],
+      points: [{x: 310, y: 1700}],
       max: 200 * 1.0 / 3
     },{
       place: "AP-022",
-      points: [{x: 250, y: 1400}]
+      points: [{x: 310, y: 1490}]
     },{
       place: "AP-111",
-      points: [{x: 360, y: 1580}]
+      points: [{x: 490, y: 1700}]
     }];
   var track_4 = [{
       place: "AP-021",
-      points: [{x: 570, y: 1580}],
+      points: [{x: 740, y: 1700}],
       max: 200 * 1.0 / 3
     },{
       place: "AP-023",
-      points: [{x: 570, y: 1400}],
+      points: [{x: 740, y: 1490}],
     },{
       place: "AP-112",
-      points: [{x: 430, y: 1400}]
+      points: [{x: 570, y: 1490}]
     }];
   var foodcoat = [{
       place: "AP-004",
@@ -121,14 +121,14 @@
     }];
   var lobby_4f = [{
       place: "AP-024",
-      points: [{x: 270, y: 1260}],
+      points: [{x: 330, y: 1310}],
       max: 40 / 3
     },{
       place: "AP-025",
-      points: [{x: 370, y: 1190}]
+      points: [{x: 460, y: 1230}]
     },{
       place: "AP-026",
-      points: [{x: 430, y: 1270}]
+      points: [{x: 530, y: 1330}]
     }];
 
   function getDataPoints(track) {
