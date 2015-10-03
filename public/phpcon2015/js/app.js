@@ -84,7 +84,7 @@
   var foodcoat = [{
       place: "AP-004",
       points: [{x: 120, y: 450}],
-      max: 100 / 3
+      max: 90 / 3
     },{
       place: "AP-006",
       points: [{x: 120, y: 120}]
@@ -95,7 +95,7 @@
   var sponsor = [{
       place: "AP-001",
       points: [{x: 530, y: 110}],
-      max: 80 / 4
+      max: 100 / 4
     },{
       place: "AP-003",
       points: [{x: 280, y: 450}]
@@ -109,12 +109,12 @@
   var reception = [{
       place: "AP-002",
       points: [{x: 460, y: 400}],
-      max: 40 / 1
+      max: 30 / 1
     }];
   var lobby_2f = [{
       place: "AP-014",
       points: [{x: 350, y: 910}],
-      max: 30 / 2
+      max: 40 / 2
     },{
       place: "AP-015",
       points: [{x: 190, y: 900}]
@@ -122,7 +122,7 @@
   var lobby_4f = [{
       place: "AP-024",
       points: [{x: 330, y: 1310}],
-      max: 40 / 3
+      max: 45 / 3
     },{
       place: "AP-025",
       points: [{x: 460, y: 1230}]
