@@ -19,7 +19,7 @@
   var track_1 = [{
       place: "AP-101",
       points: [{x: 940, y: 450}],
-      max: 500 * 1.0 / 6
+      max: 500 * 1.3 / 6
     },{
       place: "AP-102",
       points: [{x: 880, y: 300}]
@@ -39,7 +39,7 @@
   var track_2 = [{
       place: "AP-009",
       points: [{x: 980, y: 950}],
-      max: 300 * 1.0 / 6
+      max: 400 * 1.3 / 7
     },{
       place: "AP-010",
       points: [{x: 880, y: 770}]
@@ -62,7 +62,7 @@
   var track_3 = [{
       place: "AP-020",
       points: [{x: 310, y: 1700}],
-      max: 200 * 1.0 / 3
+      max: 220 * 1.3 / 3
     },{
       place: "AP-022",
       points: [{x: 310, y: 1490}]
@@ -73,7 +73,7 @@
   var track_4 = [{
       place: "AP-021",
       points: [{x: 740, y: 1700}],
-      max: 200 * 1.0 / 3
+      max: 220 * 1.3 / 3
     },{
       place: "AP-023",
       points: [{x: 740, y: 1490}],
@@ -84,7 +84,7 @@
   var foodcoat = [{
       place: "AP-004",
       points: [{x: 120, y: 450}],
-      max: 50 / 3
+      max: 100 / 3
     },{
       place: "AP-006",
       points: [{x: 120, y: 120}]
@@ -95,7 +95,7 @@
   var sponsor = [{
       place: "AP-001",
       points: [{x: 530, y: 110}],
-      max: 50 / 4
+      max: 80 / 4
     },{
       place: "AP-003",
       points: [{x: 280, y: 450}]
@@ -109,7 +109,7 @@
   var reception = [{
       place: "AP-002",
       points: [{x: 460, y: 400}],
-      max: 80 / 1
+      max: 40 / 1
     }];
   var lobby_2f = [{
       place: "AP-014",
