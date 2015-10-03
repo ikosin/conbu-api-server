@@ -19,7 +19,7 @@
   var track_1 = [{
       place: "AP-101",
       points: [{x: 940, y: 450}],
-      max: 500 * 1.3 / 6
+      max: 500 * 1.2 / 6
     },{
       place: "AP-102",
       points: [{x: 880, y: 300}]
@@ -39,7 +39,7 @@
   var track_2 = [{
       place: "AP-009",
       points: [{x: 980, y: 950}],
-      max: 400 * 1.3 / 7
+      max: 400 * 1.2 / 7
     },{
       place: "AP-010",
       points: [{x: 880, y: 770}]
