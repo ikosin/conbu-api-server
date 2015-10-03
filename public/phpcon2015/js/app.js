@@ -95,16 +95,18 @@
   var sponsor = [{
       place: "AP-001",
       points: [{x: 530, y: 110}],
-      max: 100 / 4
+      max: 45 / 3
     },{
       place: "AP-003",
       points: [{x: 280, y: 450}]
     },{
       place: "AP-005",
       points: [{x: 320, y: 110}]
-    },{
+    }];
+  var track_1_entrance = [{
       place: "AP-107",
-      points: [{x: 550, y: 300}]
+      points: [{x: 550, y: 300}],
+      max: 50 / 1
     }];
   var reception = [{
       place: "AP-002",
@@ -184,6 +186,7 @@
     dataPoints = dataPoints.concat(getDataPoints(track_4));
     dataPoints = dataPoints.concat(getDataPoints(foodcoat));
     dataPoints = dataPoints.concat(getDataPoints(sponsor));
+    dataPoints = dataPoints.concat(getDataPoints(track_1_entrance));
     dataPoints = dataPoints.concat(getDataPoints(reception));
     dataPoints = dataPoints.concat(getDataPoints(lobby_2f));
     dataPoints = dataPoints.concat(getDataPoints(lobby_4f));
